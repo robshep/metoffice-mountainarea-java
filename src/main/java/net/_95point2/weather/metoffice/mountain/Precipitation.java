@@ -1,0 +1,46 @@
+
+package net._95point2.weather.metoffice.mountain;
+
+import java.util.HashMap;
+import java.util.Map;
+import javax.validation.Valid;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "Probability"
+})
+public class Precipitation {
+
+    @JsonProperty("Probability")
+    private String probability;
+    @JsonIgnore
+    @Valid
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+    @JsonProperty("Probability")
+    public String getProbability() {
+        return probability;
+    }
+
+    @JsonProperty("Probability")
+    public void setProbability(String probability) {
+        this.probability = probability;
+    }
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
+
+}
