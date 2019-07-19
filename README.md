@@ -13,7 +13,7 @@ The object-graph is awkward, to say the least.
 
 There's a simple client for fetching the feed
 
- Forecast foecast = new MichaelFish().saysFor("snowdonia", <datapoint API key>);
+    Forecast foecast = new MichaelFish().saysFor("snowdonia", "datapoint API key");
 
 ## In the wild
 
